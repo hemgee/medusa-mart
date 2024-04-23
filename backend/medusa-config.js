@@ -85,4 +85,13 @@ module.exports = {
   projectConfig,
   plugins,
   modules,
+  projectConfig: {
+    // ...
+    database_extra: process.env.NODE_ENV !== "development" ?
+      {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      } : {},
+  },
 };
